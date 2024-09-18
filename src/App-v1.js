@@ -31,42 +31,26 @@ export default function App() {
             <div className={`${step >= 3 ? "active" : ""}`}>3</div>
           </div>
 
-          {/* <p className="message">
-            <h3>Step {step} :</h3> {messages[step - 1]}
-          </p> */}
-
-          <StepMessage step={step}>{messages[step - 1]}</StepMessage>
+          <p className="message">
+            Step {step}: {messages[step - 1]}
+          </p>
 
           <div className="buttons">
-            <Button onClick={handlePrevious} bgColor="#7950f2" textColor="#fff">
-              <span>👈</span> Previus
-            </Button>
-            <Button onClick={handleNext} bgColor="#7950f2" textColor="#fff">
-              Next <span>👉</span>
-            </Button>
+            <button
+              style={{ backgroundColor: "#7950f2", color: "#fff" }}
+              onClick={handlePrevious}
+            >
+              Previous
+            </button>
+            <button
+              style={{ backgroundColor: "#7950f2", color: "#fff" }}
+              onClick={handleNext}
+            >
+              Next
+            </button>
           </div>
         </div>
       )}
     </>
-  );
-}
-
-function StepMessage({ step, children }) {
-  return (
-    <p className="message">
-      <h3>Step {step} </h3>
-      {children}
-    </p>
-  );
-}
-
-function Button({ onClick, bgColor, textColor, children }) {
-  return (
-    <button
-      style={{ backgroundColor: bgColor, color: textColor }}
-      onClick={onClick}
-    >
-      {children}
-    </button>
   );
 }
